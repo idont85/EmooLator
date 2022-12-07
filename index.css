@@ -1,0 +1,16 @@
+#body {
+    background-color: black;
+}
+
+#instruct {
+    color: white
+}
+
+#pic {
+    height: 15px;
+    width: 14.5px;
+}
+
+#web {
+    resize: vertical;
+}
