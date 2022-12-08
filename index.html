@@ -4,9 +4,20 @@
         <span><title>EmooLator</title></span>
         <link rel="stylesheet" href="index.css">
     </head>
-    <body onload="document.title = getCookie('title')" style="background-color: black;">
+    <body onload="fullCloak()" style="background-color: black;">
         <center>
             <script>
+                function setFavicons(favImg){
+                    let headTitle = document.querySelector('head');
+                    let setFavicon = document.createElement('link');
+                    setFavicon.setAttribute('rel','shortcut icon');
+                    setFavicon.setAttribute('href',favImg);
+                    headTitle.appendChild(setFavicon);
+                }
+                function fullCloak() {
+                    document.title = getCookie("title");
+                    setFavicons(getCookie("favicon"))
+                }
                 function goWeb(link) {
                     var link2 = "https://" + link
                     var ifrm = document.getElementById("web")
