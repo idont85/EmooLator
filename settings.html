@@ -9,14 +9,14 @@
             }
         </script>
     </head>
-    <body onload="document.title = getCookie('title')">
+    <body onload="document.title = getCookie('title'); setFavicons()">
         <script>
             function setFavicons(favImg){
                 let headTitle = document.querySelector('head');
                 let setFavicon = document.createElement('link');
                 setFavicon.setAttribute('rel','shortcut icon');
                 setFavicon.setAttribute('href',favImg);
-                headTitle.appendChild(setFavicon);
+                headTitle.appendChild(getCookie("favicon"));
             }
             function goPaste(text) {
                 document.getElementById("cloakpic").value = text
