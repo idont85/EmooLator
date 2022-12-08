@@ -33,7 +33,7 @@
                 setCookie("title", cloakname, 200)
                 document.title = getCookie("title")
                 setCookie("favicon", cloakpic, 200)
-                setFavicon(cloakpic)
+                setFavicon(getCookie("favicon"))
             }
 
             function setCookie(cname, cvalue, exdays) {
