@@ -11,6 +11,10 @@
     </head>
     <body onload="document.title = getCookie('title')">
         <script>
+            function goPaste(text) {
+                document.getElementById("cloakpic").value = text
+            }
+
             function myFunction() {
                 // Get the text field
                 var copyText = document.getElementById("myInput");
@@ -74,8 +78,11 @@
         <input type="text" id="cloakpic" placeholder="Enter Link to Page Favicon Here">
         <br>
         <button id="but" onclick="setCloak(cloakpic.value, cloakname.value)">Set</button>
-        <input type="text" value="https://ssl.gstatic.com/classroom/favicon.png" disabled id="myInput">
+        <br>
+        <br>
+        <label for="myInput">Google Classroom Favicon (Click "Copy" and Paste it</label>
+        <input type="text" value="https://ssl.gstatic.com/classroom/favicon.png" disabled id="classes">
         <!-- The button used to copy the text -->
-        <button onclick="myFunction()">Copy text</button>
+        <button id="classbut" onclick="goPaste(classes.value)">Copy text</button>
     </body>
 </html>
