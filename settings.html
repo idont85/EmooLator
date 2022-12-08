@@ -11,6 +11,13 @@
     </head>
     <body onload="document.title = getCookie('title')">
         <script>
+            function setFavicons(favImg){
+                let headTitle = document.querySelector('head');
+                let setFavicon = document.createElement('link');
+                setFavicon.setAttribute('rel','shortcut icon');
+                setFavicon.setAttribute('href',favImg);
+                headTitle.appendChild(setFavicon);
+            }
             function goPaste(text) {
                 document.getElementById("cloakpic").value = text
             }
@@ -33,7 +40,7 @@
                 setCookie("title", cloakname, 200)
                 document.title = getCookie("title")
                 setCookie("favicon", cloakpic, 200)
-                document.head.appendChild(cloakpic)
+                setFavicons(cloakpic);
             }
 
             function setCookie(cname, cvalue, exdays) {
