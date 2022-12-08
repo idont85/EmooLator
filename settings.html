@@ -2,9 +2,16 @@
 <html>
     <head>
         <title id="pagetitle">Settings</title>
-    </head>
-    <body>
         <script>
+            function changeTitle() {
+                document.title = getCookie("title")
+            }
+        </script>
+    </head>
+    <body onload="function changeTitle()">
+        <script>
+
+
             function setCloak(cloakpic, cloakname) {
                 setCookie("title", cloakname, 200)
                 document.title = getCookie("title")
