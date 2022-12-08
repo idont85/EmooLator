@@ -4,7 +4,7 @@
         <span><title>EmooLator</title></span>
         <link rel="stylesheet" href="index.css">
     </head>
-    <body style="background-color: black;">
+    <body onload="document.title = getCookie('title')" style="background-color: black;">
         <center>
             <script>
                 function goWeb(link) {
@@ -13,6 +13,22 @@
                     var ifrm = document.getElementById("web")
                     ifrm.setAttribute("src", link2);
                 }
+
+                function getCookie(cname) {
+                let name = cname + "=";
+                let ca = document.cookie.split(';');
+                for(let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+                
+            }
             </script>
             <t id="instruct">Do not include the "https:// or http://"</t>
             <br>
